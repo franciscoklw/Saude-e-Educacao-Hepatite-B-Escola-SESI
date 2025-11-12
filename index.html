@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hepatite B — Apresentação</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --card:#f8f8f8;
+      --muted:#444444;
+      --accent:#25C6D0; /* ciano mais suave */
+      --accent-contrast:#111;
+      --title:#6FDDA0; /* verde mais visível */
+      --radius:12px;
+      --maxwidth:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      height:100%;
+      margin:0;
+      background:var(--bg);
+      color:var(--muted);
+      font-family:Inter,system-ui,Roboto,Arial;
+      -webkit-font-smoothing:antialiased;
+      scroll-behavior:smooth;
+    }
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:var(--maxwidth);margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap;}
+    .logo{width:60px;height:60px;border-radius:12px;background:linear-gradient(135deg,var(--title),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent-contrast);box-shadow:0 6px 18px rgba(0,0,0,0.1)}
+    h1{margin:0;font-size:1.5rem;color:var(--title)}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:0.95rem;line-height:1.4}
+    main{display:block}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:20px}
+    h2{color:var(--title);margin-top:0;font-size:1.1rem}
+    h3{color:#333;font-size:1rem;margin-bottom:6px}
+    ul{margin:0 0 10px 1rem;padding:0}
+    li{margin-bottom:4px}
+    .note{color:#666;font-size:0.9rem;line-height:1.4}
+    .primary-btn{background:var(--accent);color:var(--accent-contrast);border:none;padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;transition:0.2s}
+    .primary-btn:hover{opacity:0.9;transform:scale(1.02)}
+    iframe{width:100%;height:340px;border:0;border-radius:8px;margin-top:10px}
+    footer{text-align:center;color:#777;font-size:0.9rem;margin-top:30px}
+
+    /* ===== CARROSSEL ===== */
+/* ===== CARROSSEL ===== */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  padding: 30px 20px;
+  background: var(--card);
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  min-height: 280px;
+}
+
+.slide h3 {
+  color: var(--title);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .slide {
+    padding: 20px 15px;
+    min-height: auto;
+  }
+  .slide h3 {
+    font-size: 1.1rem;
+  }
+  .slide p {
+    font-size: 0.9rem;
+  }
+}
+
+  .O-que-e img {
+    width: 200px;
+    height: auto;
+    margin-left: -4px; /* aproxima a imagem do texto */
+    vertical-align: middle; /* alinha melhor com o texto */
+}
+.mundo img {
+    width: 200px;
+    height: auto;
+    margin-left: -4px; /* aproxima a imagem do texto */
+    vertical-align: middle; /* alinha melhor com o texto */
+}
+.vacina img {
+    width: 200px;
+    height: auto;
+    margin-left: -4px; /* aproxima a imagem do texto */
+    vertical-align: middle; /* alinha melhor com o texto */
+}
+
+footer {
+  display: flex;
+  align-items: center;     /* centraliza verticalmente */
+  justify-content: center; /* centraliza tudo no meio da tela */
+  gap: 100px;               /* espaço entre imagem e texto */
+  padding: 10px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.SESI {
+  width: 100px;
+  height: auto;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo"><img src="img/Saúde.png" alt="Ícone médico" width="100" height="auto"></div>
+      <div>
+        <h1>Hepatite B — Apresentação</h1>
+        <p class="lead">Resumo didático sobre a hepatite B: dados, prevenção e contexto histórico. Projeto desenvolvido para a disciplina de Biologia.</p>
+      </div>
+    </header>
+
+    <!-- CARROSSEL -->
+    <div class="carousel-container">
+      <div class="carousel-slide" id="carousel">
+        <div class="slide">
+          <h3 class="O-que-e">
+            O que é? <img src="img/Médico.png" alt="Ícone médico"> </h3>
+          <p>A hepatite B é uma infecção viral que atinge o fígado e pode se tornar crônica. Causada pelo vírus HBV, pode levar a cirrose e câncer hepático se não tratada corretamente.</p>
+          <button class="primary-btn" data-scroll="sec-characterization">Saiba mais</button>
+        </div>
+        <div class="slide">
+          <h3 class="mundo">
+            Panorama atual <img src="img/Mundo.png" alt="Ícone médico"> </h3>
+          <p>No Brasil, centenas de milhares de casos já foram notificados desde 2000. Globalmente, a OMS estima cerca de 296 milhões de pessoas com infecção crônica.</p>
+          <button class="primary-btn" data-scroll="sec-panorama">Saiba mais</button>
+        </div>
+        <div class="slide">
+          <h3 class="vacina">
+            Prevenção e cuidados <img src="img/vacina.png" alt="Ícone médico"> </h3>
+          <p>A vacinação é gratuita e eficaz. O uso de preservativos e a esterilização de materiais evitam novas infecções.</p>
+          <button class="primary-btn" data-scroll="sec-prevention">Saiba mais</button>
+        </div>
+      </div>
+      <button class="carousel-btn prev" id="prevBtn">‹</button>
+      <button class="carousel-btn next" id="nextBtn">›</button>
+    </div>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="card" id="sec-location">
+      <h2>Postos de saúde próximos</h2>
+      <p class="note">Permita o acesso à localização para ver o mapa de postos de saúde próximos.</p>
+      <button id="locateBtn" class="primary-btn" style="width:100%;margin-bottom:12px">Mostrar postos próximos</button>
+      <div id="mapContainer"></div>
+    </section>
+
+    <!-- SEÇÕES COMPLETAS -->
+    <main>
+      <section id="sec-characterization" class="card">
+        <h2>Caracterização e agente etiológico</h2>
+        <p>O vírus da hepatite B (HBV), da família <i>Hepadnaviridae</i>, atinge os hepatócitos, provocando inflamação que pode evoluir para cirrose ou câncer hepático.</p>
+        <h3>Transmissão</h3>
+        <ul>
+          <li>Relações sexuais sem preservativo;</li>
+          <li>Compartilhamento de agulhas e objetos cortantes;</li>
+          <li>Procedimentos invasivos sem esterilização adequada;</li>
+          <li>Transmissão vertical da mãe para o filho.</li>
+        </ul>
+        <p class="note">Período de incubação: 30 a 180 dias. Cronificação em até 10% dos adultos infectados.</p>
+      </section>
+
+      <section id="sec-panorama" class="card">
+        <h2>Panorama e dados socioeconômicos</h2>
+        <p>No mundo, a hepatite B é um dos maiores desafios de saúde pública. Segundo a Organização Mundial da Saúde (OMS), cerca de 296 milhões de pessoas vivem com a infecção crônica, resultando em mais de 800 mil mortes anuais.</p>
+        <p>No Brasil, entre 2000 e 2024, foram notificados mais de 300 mil casos confirmados. As regiões Sudeste e Sul concentram a maioria, com 34% e 31% dos casos, respectivamente.</p>
+        <p>A desigualdade social e a falta de acesso a testes e vacinas ainda dificultam a erradicação completa da doença.</p>
+      </section>
+
+      <section id="sec-history" class="card">
+        <h2>Contexto histórico</h2>
+        <p>Durante a Revolução Industrial, o rápido crescimento urbano e as condições precárias de higiene favoreceram a disseminação de infecções como a hepatite B. A falta de esterilização em instrumentos médicos e odontológicos aumentou o risco de transmissão. O vírus só foi identificado em 1965, o que permitiu o início das vacinas e testes modernos.</p>
+      </section>
+
+      <section id="sec-symptoms" class="card">
+        <h2>Sintomas e diagnóstico</h2>
+        <p>Muitos portadores não apresentam sintomas. Quando ocorrem, incluem fadiga, náuseas, febre baixa e dor abdominal. Em casos avançados, surgem icterícia, urina escura e sinais de insuficiência hepática.</p>
+        <p>O diagnóstico é feito por exames de sangue (HBsAg) e testes de carga viral (HBV-DNA), além de avaliações hepáticas.</p>
+      </section>
+
+      <section id="sec-prevention" class="card">
+        <h2>Prevenção e tratamento</h2>
+        <h3>Prevenção</h3>
+        <ul>
+          <li>Vacinação gratuita e segura pelo SUS.</li>
+          <li>Uso de preservativos em todas as relações sexuais.</li>
+          <li>Não compartilhar objetos cortantes.</li>
+          <li>Esterilização de instrumentos médicos e tatuagens.</li>
+        </ul>
+        <h3>Tratamento</h3>
+        <p>O tratamento da forma crônica é feito com antivirais como Tenofovir e Entecavir, fornecidos pelo SUS. Embora nem sempre haja cura completa, é possível controlar o vírus e evitar complicações graves.</p>
+      </section>
+
+      <section class="card">
+        <h2>Fontes de referência</h2>
+        <ul>
+          <li><a href="https://www.who.int/news-room/fact-sheets/detail/hepatitis-b" target="_blank">Organização Mundial da Saúde (OMS)</a></li>
+          <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/h/hepatites-virais/hepatite-b" target="_blank">Ministério da Saúde — Hepatite B</a></li>
+          <li><a href="https://portal.fiocruz.br/" target="_blank">Fiocruz</a></li>
+          <li><a href="https://www.sbi.org.br/" target="_blank">Sociedade Brasileira de Infectologia</a></li>
+          <li><a href="https://www.unicamp.br/" target="_blank">Unicamp</a></li>
+          <li><a href="https://www.cdc.gov/hepatitis/hbv/index.htm" target="_blank">CDC — Hepatitis B</a></li>
+          <li><a href="https://www.tuasaude.com/hepatite-b/" target="_blank">Tua Saúde</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+        <img src="img/SESI.png" alt="Logo" class="SESI">
+      <p>Informações retiradas do documento e complementadas com dados oficiais.</p>
+    </footer>
+  </div>
+
+  <button id="chatBtn" class="primary-btn" style="background:#25C6D0;position:fixed;right:20px;bottom:20px;border-radius:50%;width:60px;height:60px;font-size:22px">💬</button>
+
+  <script>
+    const carousel=document.getElementById("carousel");
+    const slides=document.querySelectorAll(".slide");
+    let index=0;let auto;
+    function showSlide(i){carousel.style.transform=`translateX(${-i*100}%)`;}
+    function nextSlide(){index=(index+1)%slides.length;showSlide(index);}
+    function prevSlide(){index=(index-1+slides.length)%slides.length;showSlide(index);}
+    function startAuto(){clearInterval(auto);auto=setInterval(nextSlide,6000);}
+    document.getElementById("nextBtn").addEventListener("click",()=>{nextSlide();startAuto();});
+    document.getElementById("prevBtn").addEventListener("click",()=>{prevSlide();startAuto();});
+    startAuto();
+    document.querySelectorAll("[data-scroll]").forEach(btn=>{
+      btn.addEventListener("click",e=>{
+        const id=e.target.getAttribute("data-scroll");
+        const el=document.getElementById(id);
+        if(el)el.scrollIntoView({behavior:"smooth"});
+      });
+    });
+    document.getElementById("locateBtn").addEventListener("click",()=>{
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(pos=>{
+          const lat=pos.coords.latitude,lon=pos.coords.longitude;
+          const url=`https://www.google.com/maps?q=postos+de+saude+proximos&hl=pt-BR&z=15&output=embed&ll=${lat},${lon}`;
+          document.getElementById("mapContainer").innerHTML=`<iframe src="${url}" allowfullscreen></iframe>`;
+        },()=>alert("Não foi possível obter sua localização."));
+      }else alert("Seu navegador não suporta geolocalização.");
+    });
+    const CHAT_URL="#";
+    document.getElementById("chatBtn").addEventListener("click",()=>{if(CHAT_URL==="#"||!CHAT_URL)alert("Chatbot ainda não configurado.");else window.open(CHAT_URL,"_blank");});
+  </script>
+</body>
+</html>
+b
