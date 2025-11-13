@@ -243,41 +243,37 @@ footer {
     <footer>
         <img src="img/SESI.png" alt="Logo" class="SESI">
       <p>Informações retiradas do documento e complementadas com dados oficiais.</p>
+    <footer>
+        <img src="img/SESI.png" alt="Logo" class="SESI">
+        <p>Informações retiradas do documento e complementadas com dados oficiais.</p>
     </footer>
   </div>
 
-  <button id="chatBtn" class="primary-btn" style="background:#25C6D0;position:fixed;right:20px;bottom:20px;border-radius:50%;width:60px;height:60px;font-size:22px">💬</button>
-
+  <!-- === CHATBASE CHATBOT === -->
   <script>
-    const carousel=document.getElementById("carousel");
-    const slides=document.querySelectorAll(".slide");
-    let index=0;let auto;
-    function showSlide(i){carousel.style.transform=`translateX(${-i*100}%)`;}
-    function nextSlide(){index=(index+1)%slides.length;showSlide(index);}
-    function prevSlide(){index=(index-1+slides.length)%slides.length;showSlide(index);}
-    function startAuto(){clearInterval(auto);auto=setInterval(nextSlide,6000);}
-    document.getElementById("nextBtn").addEventListener("click",()=>{nextSlide();startAuto();});
-    document.getElementById("prevBtn").addEventListener("click",()=>{prevSlide();startAuto();});
-    startAuto();
-    document.querySelectorAll("[data-scroll]").forEach(btn=>{
-      btn.addEventListener("click",e=>{
-        const id=e.target.getAttribute("data-scroll");
-        const el=document.getElementById(id);
-        if(el)el.scrollIntoView({behavior:"smooth"});
-      });
-    });
-    document.getElementById("locateBtn").addEventListener("click",()=>{
-      if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(pos=>{
-          const lat=pos.coords.latitude,lon=pos.coords.longitude;
-          const url=`https://www.google.com/maps?q=postos+de+saude+proximos&hl=pt-BR&z=15&output=embed&ll=${lat},${lon}`;
-          document.getElementById("mapContainer").innerHTML=`<iframe src="${url}" allowfullscreen></iframe>`;
-        },()=>alert("Não foi possível obter sua localização."));
-      }else alert("Seu navegador não suporta geolocalização.");
-    });
-    const CHAT_URL="#";
-    document.getElementById("chatBtn").addEventListener("click",()=>{if(CHAT_URL==="#"||!CHAT_URL)alert("Chatbot ainda não configurado.");else window.open(CHAT_URL,"_blank");});
+  (function(){
+    if(!window.chatbase || window.chatbase("getState")!=="initialized"){
+      window.chatbase=(...arguments)=>{
+        if(!window.chatbase.q){window.chatbase.q=[]}
+        window.chatbase.q.push(arguments)
+      };
+      window.chatbase=new Proxy(window.chatbase,{
+        get(target,prop){
+          if(prop==="q"){return target.q}
+          return(...args)=>target(prop,...args)
+        }
+      })
+    }
+    const onLoad=function(){
+      const script=document.createElement("script");
+      script.src="https://www.chatbase.co/embed.min.js";
+      script.id="OiLdo9uMTW8Iv12YKpsHa";  /* <-- seu ID do Chatbase */
+      script.domain="www.chatbase.co";
+      document.body.appendChild(script)
+    };
+    if(document.readyState==="complete"){onLoad()}
+    else{window.addEventListener("load",onLoad)}
+  })();
   </script>
 </body>
 </html>
-b
